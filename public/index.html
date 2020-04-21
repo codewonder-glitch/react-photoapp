@@ -40,4 +40,27 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBljVA0uKbbp-_Z0CZZpazkF0z2FnjH09s",
+    authDomain: "react-photoapp.firebaseapp.com",
+    databaseURL: "https://react-photoapp.firebaseio.com",
+    projectId: "react-photoapp",
+    storageBucket: "react-photoapp.appspot.com",
+    messagingSenderId: "333282435473",
+    appId: "1:333282435473:web:0c977c4d8ed09605493a30",
+    measurementId: "G-8GHBJP5VP0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 </html>
