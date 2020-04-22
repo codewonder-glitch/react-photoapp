@@ -1,6 +1,6 @@
 import React from 'react';
 // import {Link, withRouter } from 'react-router-dom'
-import firebase from '../firebase';
+import firebase from '../../firebase';
 
 export default class Register extends React.Component{
     constructor(props){
@@ -18,17 +18,16 @@ export default class Register extends React.Component{
         e.preventDefault();
         console.log("I came here")
         firebase.database().ref("users")
-        .set({
+        .push({
 
             firstname:this.state.firstName,
             lastname:this.state.lastName,
             username:this.state.username,
             email:this.state.email,
             password:this.state.password,
-            registered:false
-
-
-         } );
+             } );
+        
+     
 this.setState({registered:"true"})
          console.log(this.state.email)
          alert("Successfully Registered,Please login")

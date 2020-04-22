@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
 import Register from './register'
+import firebase from '../../firebase'
+import Navbar from '../Navbar'
 
 export default class Login extends React.Component{
     constructor(props){
@@ -19,10 +21,39 @@ export default class Login extends React.Component{
     }
    
     Logintohome=(e)=>{
-        console.log("log")
-e.preventDefault();
-       this.setState({home:true})
+    e.preventDefault();
+    //Fetching data from firebase
+// var UCRef=firebase.database().ref("users")
+// UCRef.on('value', snapshot => {
+//     console.log(snapshot.val())
+//   });
+//        this.setState({home:true});
+
+this.setState({home:true});
+this.setState({login:false});
+var usernames = firebase.database().ref("users/");
+var arr=[];
+usernames.orderByChild("email").on("child_added", function(data) {
+   arr.push(data.val().email);
+});
+for(let i=0;i<arr.length;i++)
+{
+    if(arr[i]==this.state.email)
+    console.log("match found")
+}
+
+usernames.orderByChild("email").equalTo(this.state.email).on("child_added", function(data) {
+    console.log("Start at filter: " + data.val().username);
+ });
+
+    //removing data
+
+//    firebase.database().ref("users"+"Visalakshi").child("Senthol").remove();
+
     }
+       
+
+    
 
     gotoRegister=(e)=>{
         this.setState({register:true})
@@ -57,7 +88,7 @@ e.preventDefault();
         
                 </form>
             </div>):null}
-              {this.state.home ?(<h1>"logged"</h1>):(false)}
+              {this.state.home ?<Navbar />:(false)}
             </div>
             
         )

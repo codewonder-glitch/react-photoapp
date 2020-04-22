@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.container{
+
+  display: grid;
+  grid-column: auto auto; 
+  grid-gap: 20px;
+}
+
+.img{
+
+  height: 300px;
+  width:200px;
+}
