@@ -1,0 +1,35 @@
+div{
+    
+    h1{
+        position: absolute;
+        top:10px;
+         left:500px;
+
+    }
+img{
+// position: absolute;
+    height: 100%;
+    width:100% ;
+//     z-index: 0;
+//     margin: 0px;
+}
+    .Login{
+        position: absolute;
+        margin: 50px;
+            top:100px;
+            z-index: 5;
+              left:500px;
+              .inputtxt{
+    
+                padding: 10px 10px;
+                margin: 4px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+              }
+        }
+        
+        
+        
+}

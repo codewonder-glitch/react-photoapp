@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
 import firebase from '../firebase'
-import unlike from './Assets/unlike.jpg'
-import like from './Assets/like.jpg'
+
+import like from '../assets/like.png'
 import './Home.scss'
 
 
@@ -27,8 +27,7 @@ export default class Home extends React.Component{
          console.log(snapshot.val())
          this.setState({url1:snapshot.val()})
         });
-
-        var UCRef=firebase.database().ref("users").child("-M5PuO4hTTp6nDZFjQrW").child("Photos").child("url2").once("value")
+    var UCRef=firebase.database().ref("users").child("-M5PuO4hTTp6nDZFjQrW").child("Photos").child("url2").once("value")
      .then(snapshot=>{
          console.log(snapshot.val())
          this.setState({url2:snapshot.val()})
@@ -51,33 +50,48 @@ var str=this.state.url3
 console.log(str)
 
     return(
-
+<div className="wrapper">
         <div className="container">
 <div>
 <img className="img" src={this.state.url1}/>
- <img src={like}/> 
- <img src={unlike}/> 
+<div className="Likecomment">
+ <img className="like" src={like}/>
+ <button className="commentbtn" > comments</button>
+ 
+ </div> 
+ 
 </div>
 <div>
 <img className="img" src={this.state.url2}/>
- <img src={like}/> 
- <img src={unlike}/> 
+<div className="Likecomment">
+ <img className="like" src={like}/>
+ {/* <input type="button"
+className="inputbtn"  >comments</input> */}
+ 
+ </div> 
+ 
 </div>
 <div>
 <img className="img" src={this.state.url2}/>
- <img src={like}/> 
- <img src={unlike}/> 
+<div className="Likecomment">
+ <img className="like" src={like}/>
+ <button className="commentbtn" > comments</button>
+ </div> 
+ 
 </div>
 <div>
 <img className="img" src={this.state.url2}/>
- <img src={like}/> 
- <img src={unlike}/> 
- <input type="text" value={str}/>
+<div className="Likecomment">
+ <img className="like" src={like}/>
+ <button className="commentbtn">comments</button>
+ </div> 
+ 
+ 
 </div>
 
       </div>
 
-
+</div>
 
 
     );

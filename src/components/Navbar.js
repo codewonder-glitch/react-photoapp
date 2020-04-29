@@ -13,12 +13,21 @@ export default class Navbar extends React.Component{
         super(props)
     }
 render(){
-console.log("Are u coming nav")
+
     return(
+<div>
+    <div className="thumbnail">
+<div>
+<img id="displaypic" src={this.props.displaypic}/>
+<h1 id='displayheader'>{this.props.name}</h1>
+</div>
+</div>
 
 <Router>
+    <div className="link">
     <ul>
-    <li>
+
+    <li >
         <Link to="/">Home
          </Link>
          </li>
@@ -31,7 +40,7 @@ console.log("Are u coming nav")
          </Link>
          </li>
          </ul>
-        
+         </div>    
         <Switch>
         <Route exact path="/"><Home /></Route>
         <Route exact path="/users"><Userprofiles /></Route>
@@ -40,7 +49,7 @@ console.log("Are u coming nav")
 
         </Router>
 
-
+        </div>
 
 
     );

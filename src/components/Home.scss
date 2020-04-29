@@ -1,14 +1,21 @@
+.wrapper{
+//  text-align: center;
+ margin: auto auto;
+ width:50%;
 .container{
-
+  // width: 100%;
     display: grid;
     grid-template-columns: auto auto auto; 
     grid-gap: 20px;
-  
+  position:absolute;
+  // justify-items: center;
+  top:150px;
+  text-align: center;
   
   .img{
   
     display: inline-block;
-    height: 300px;
+    height: 200px;
     width:200px;
     border:3px solid purple;
     padding:2px 10px;
@@ -16,13 +23,19 @@
 
   }
 }
-
+}
+.link{
+  margin: auto auto;
+ width:50%;
+  // text-align: center;
 ul{
+  margin:auto auto;
     list-style:none;
     display: inline-block;
-}
+    position: absolute;
+    top:90px;left:200px;
 
-ul li{
+ li{
     display: inline-block;
     padding: 10px 20px;
     cursor:pointer;
@@ -32,3 +45,49 @@ ul li{
     transition:0.3s;
     font: bold 14px Arial;
 }
+}
+}
+
+
+
+
+
+.thumbnail{
+
+  display:flex;
+  position: absolute;
+  justify-items: left;
+  top:50px;
+  #displaypic{
+    border-radius: 90%;
+    height: 60px;
+    width: 50px;
+  
+  }
+  #displayheader{
+position: absolute;
+top:0.2px;
+left:50px;
+  }
+}
+
+.Likecomment{
+
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  // left:120px;
+ .like{
+  border-radius: 90%;
+  height: 30px;
+  width: 25px;
+
+
+}
+.commentbtn{
+
+
+
+}
+}
+
