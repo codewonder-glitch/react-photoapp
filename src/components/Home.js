@@ -1,97 +1,72 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
-import firebase from '../firebase'
-
+import data from './Data'
 import like from '../assets/like.png'
 import './Home.scss'
-
-
-
+import cat from '../assets/cat.jpg'
 
 export default class Home extends React.Component{
     constructor(props){
         super(props)
-        this.state = {
-          url1:'',
-          url2:'',
-          url3:''
-          
-      }
 
+        this.state={
+
+            url:[],
+            cmts:[]
+        }
     }
-
     componentDidMount(){
-      console.log("Am in home")
-      var UCRef=firebase.database().ref("users").child("-M5PuO4hTTp6nDZFjQrW").child("Photos").child("URL").once("value")
-     .then(snapshot=>{
-         console.log(snapshot.val())
-         this.setState({url1:snapshot.val()})
-        });
-    var UCRef=firebase.database().ref("users").child("-M5PuO4hTTp6nDZFjQrW").child("Photos").child("url2").once("value")
-     .then(snapshot=>{
-         console.log(snapshot.val())
-         this.setState({url2:snapshot.val()})
-        });
-var arr=[]
-        var UCRef=firebase.database().ref("users").child("-M5PuO4hTTp6nDZFjQrW").child("Photos").child("comments").limitToFirst(1).once("value")
-     .then(snapshot=>{
-         console.log(snapshot.val())
-        //  arr.push(snapshot.val())
-        //  console.log(arr[0])
-         this.setState({url3:snapshot.val()})
-         console.log(this.state.url3)
-        });
+
+        this.getBookmark();
+    }
+    getBookmark(){
+        var cmts
+        let result = data.map(obj => {
+            return obj.name === this.props.name
+          })
+          console.log(result)
+          console.log(result.name)
+        var url=data[0].pic.map(dat=>{
+            return(
+<div>
+<img className="img" src={dat.url}/>
+<div className="Likecomment">
+ {dat.likes}<img className="like" src={like}/>
+ { 
+ url=Object.entries(dat.comments).map(([key, value]) => {
+     console.log("Hi, am obj entries")
+    return (
+        <div>
+     
+    <h3>{ `${key}: ${value}`} </h3>
+ <h3> </h3>
+    </div>
+    // console.log(`${key}: ${value}`)
+    )})
+ 
+ }
+ </div> 
+ </div>)
+
+
+        }
+            
+        )
+
+        this.setState({url:url})
+        this.setState({cmts:cmts})
+console.log(this.state.url)
     }
 render(){
 
-  
-  
-var str=this.state.url3
-console.log(str)
-
     return(
-<div className="wrapper">
+<React.Fragment>
         <div className="container">
-<div>
-<img className="img" src={this.state.url1}/>
-<div className="Likecomment">
- <img className="like" src={like}/>
- <button className="commentbtn" > comments</button>
- 
- </div> 
- 
-</div>
-<div>
-<img className="img" src={this.state.url2}/>
-<div className="Likecomment">
- <img className="like" src={like}/>
- {/* <input type="button"
-className="inputbtn"  >comments</input> */}
- 
- </div> 
- 
-</div>
-<div>
-<img className="img" src={this.state.url2}/>
-<div className="Likecomment">
- <img className="like" src={like}/>
- <button className="commentbtn" > comments</button>
- </div> 
- 
-</div>
-<div>
-<img className="img" src={this.state.url2}/>
-<div className="Likecomment">
- <img className="like" src={like}/>
- <button className="commentbtn">comments</button>
- </div> 
- 
- 
-</div>
+    {this.state.url}
+   
+        </div>
 
-      </div>
-
-</div>
+        </React.Fragment>
 
 
     );

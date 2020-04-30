@@ -13,4 +13,21 @@ ajax({
 })
 .fail(function () {
     alert("error");
+
+
 });
+
+var UCRef=firebase.database().ref("users").child("-M5PuO4hTTp6nDZFjQrW").child("Photos").child("URL").once("value")
+//      .then(snapshot=>{
+//       this.setState({url1:snapshot.val()})
+//         });
+//     var UCRef=firebase.database().ref("users").child("-M5PuO4hTTp6nDZFjQrW").child("Photos").child("url2").once("value")
+//      .then(snapshot=>{
+//        this.setState({url2:snapshot.val()})
+//         });
+// var arr=[]
+//         var UCRef=firebase.database().ref("users").child("-M5PuO4hTTp6nDZFjQrW").child("Photos").child("comments").limitToFirst(1).once("value")
+//      .then(snapshot=>{
+//         //  arr.push(snapshot.val())
+//          this.setState({url3:snapshot.val()})
+//      });

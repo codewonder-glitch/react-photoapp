@@ -73,7 +73,7 @@ usernames.orderByChild("email").equalTo(this.state.email).on("child_added", func
    
 
         return (
-            <div>
+            <div className="loginwrap">
                 <h1>Collection of memories</h1>
                 <img src={bg} alt="not loaded" />
             {(this.state.login) ? (<div className="Login">

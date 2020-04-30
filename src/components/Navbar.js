@@ -42,9 +42,9 @@ render(){
          </ul>
          </div>    
         <Switch>
-        <Route exact path="/"><Home /></Route>
-        <Route exact path="/users"><Userprofiles /></Route>
-        <Route exact path="/Bookmarks"><Bookmarks /></Route>
+        <Route exact path="/"><Home name={this.props.displayname}/></Route>
+        <Route exact path="/users"><Userprofiles  /></Route>
+        <Route exact path="/Bookmarks"><Bookmarks name={this.props.displayname}/></Route>
         </Switch>
 
         </Router>
