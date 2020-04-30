@@ -19,7 +19,7 @@ export default class Login extends React.Component{
         }
     }
 
-    componentWillMount(){
+    componentDidMount(){
         console.log("Component will mount")       
     }
    

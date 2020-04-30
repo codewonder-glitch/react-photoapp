@@ -11,27 +11,35 @@ export default class Bookmarks extends React.Component{
 
         this.state={
 
-            url:[],
-            cmts:[]
+            url:null,
+            cmts:null
         }
     }
-    componentDidMount(){
-
-        this.getBookmark();
+    componentDidUpdate(){ this.getBookmark();
     }
     getBookmark(){
-        var cmts
-      
-
-        var url=data[0].pic.map(dat=>{
+        console.log(this.props.name)
+        var cmts,result={},url
+     if(this.props.name!='')
+        {
+        data.forEach((obj,i) => {
+            if(obj.name == this.props.name){
+              result= obj
+              }
+              })
+              console.log(url)
+    url=result.pic.map(dat=>{
+        if(dat.bookmark==true){
+            console.log("cuming hee")
             return(
+              
 <div>
 <img className="img" src={dat.url}/>
 <div className="Likecomment">
  {dat.likes}<img className="like" src={like}/>
  { 
  url=Object.entries(dat.comments).map(([key, value]) => {
-     console.log("Hi, am obj entries")
+     
     return (
         <div>
      
@@ -45,20 +53,23 @@ export default class Bookmarks extends React.Component{
  </div> 
  </div>)
 
+}
 
-        }
+
+        })
+        console.log(url)
+        if(this.state.url==null)
+        {
             
-        )
-
         this.setState({url:url})
-        this.setState({cmts:cmts})
-console.log(this.state.url)
+        }
+    }
+        
     }
 render(){
-
+console.log(this.props.name)
     return(
 <React.Fragment>
-    
         <div className="container">
     {this.state.url}
    

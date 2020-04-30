@@ -11,30 +11,36 @@ export default class Home extends React.Component{
 
         this.state={
 
-            url:[],
-            cmts:[]
+            url:null,
+            cmts:null
         }
     }
-    componentDidMount(){
-
-        this.getBookmark();
+    componentDidUpdate(){ this.getBookmark();
     }
     getBookmark(){
-        var cmts
-        let result = data.map(obj => {
-            return obj.name === this.props.name
-          })
-          console.log(result)
-          console.log(result.name)
-        var url=data[0].pic.map(dat=>{
+        console.log(this.props.name)
+        var cmts,result={}
+        
+    if(this.props.name!='')
+        {
+        data.forEach((obj,i) => {
+            
+            if(obj.name == this.props.name){
+              result= obj
+              }
+              })
+           console.log(result)
+            
+    var url=result.pic.map(dat=>{
             return(
+              
 <div>
 <img className="img" src={dat.url}/>
 <div className="Likecomment">
  {dat.likes}<img className="like" src={like}/>
  { 
  url=Object.entries(dat.comments).map(([key, value]) => {
-     console.log("Hi, am obj entries")
+     
     return (
         <div>
      
@@ -52,13 +58,15 @@ export default class Home extends React.Component{
         }
             
         )
+ 
+           if(this.state.url==null) 
+     this.setState({url:url})
+      
 
-        this.setState({url:url})
-        this.setState({cmts:cmts})
-console.log(this.state.url)
+        }
     }
 render(){
-
+console.log(this.props.name)
     return(
 <React.Fragment>
         <div className="container">

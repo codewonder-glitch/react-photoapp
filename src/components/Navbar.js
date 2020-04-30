@@ -1,7 +1,7 @@
 import React from 'react';
 import {  BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
-
+import data from './Data'
 import Home from './Home'
 import './Home.scss'
 import Userprofiles from './userprofiles';
@@ -11,9 +11,21 @@ import Bookmarks from './Bookmarks'
 export default class Navbar extends React.Component{
     constructor(props){
         super(props)
-    }
-render(){
+        this.state={
 
+            dataobj:''
+        }
+    }
+
+    
+    
+render(){
+  
+        var result
+        console.log(this.props.name)
+        
+        //  console.log(objdata.name)
+        
     return(
 <div>
     <div className="thumbnail">
@@ -40,11 +52,12 @@ render(){
          </Link>
          </li>
          </ul>
-         </div>    
+         </div>   
+         
         <Switch>
-        <Route exact path="/"><Home name={this.props.displayname}/></Route>
+        <Route exact path="/"><Home name={this.props.name}/></Route>
         <Route exact path="/users"><Userprofiles  /></Route>
-        <Route exact path="/Bookmarks"><Bookmarks name={this.props.displayname}/></Route>
+        <Route exact path="/Bookmarks"><Bookmarks name={this.props.name}/></Route>
         </Switch>
 
         </Router>

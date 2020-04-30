@@ -2,12 +2,12 @@
 
 const data=[
 {
-    name:'Visa',
+    name:'visa_win',
     pic:
     [{
     url:'../assets/cat.jpg',
     likes:2,
-    bookmark:'true',
+    bookmark:true,
     comments:{
         Harini:'lookg great',
         Sharan:'wow,Amazing',
@@ -16,7 +16,7 @@ const data=[
     {  
         url:'../assets/cat.jpg',
     likes:2,
-    bookmark:'false',
+    bookmark:false,
     comments:{
         Harini:'lookg great',
         Sharan:'wow,Amazing',
@@ -33,7 +33,7 @@ const data=[
     [{
     url:'../assets/cat.jpg',
     likes:2,
-    bookmark:'false',
+    bookmark:false,
     comments:{
         Visa:'lookg great',
         Sharan:'wow,Amazing',
@@ -42,7 +42,7 @@ const data=[
     {  
         url:'../assets/cat.jpg',
     likes:2,
-    bookmark:'false',
+    bookmark:false,
     comments:{
       visa:'lookg great',
         Sharan:'wow,Amazing',
