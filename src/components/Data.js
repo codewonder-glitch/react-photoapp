@@ -51,7 +51,34 @@ const data=[
     }
 }
     ]
+},
+{
+    name:'Shanu',
+
+    pic:
+    [{
+    url:'../assets/cat.jpg',
+    likes:2,
+    bookmark:false,
+    comments:{
+        Visa:'lookg great',
+        Sharan:'wow,Amazing',
+      
+    }},
+    {  
+        url:'../assets/cat.jpg',
+    likes:2,
+    bookmark:false,
+    comments:{
+      visa:'lookg great',
+        Sharan:'wow,Amazing',
+       
+
+    }
 }
+    ]
+}
+
 
 
 ]

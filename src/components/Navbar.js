@@ -56,7 +56,7 @@ render(){
          
         <Switch>
         <Route exact path="/"><Home name={this.props.name}/></Route>
-        <Route exact path="/users"><Userprofiles  /></Route>
+        <Route exact path="/users"><Userprofiles name={this.props.name} /></Route>
         <Route exact path="/Bookmarks"><Bookmarks name={this.props.name}/></Route>
         </Switch>
 

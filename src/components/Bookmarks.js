@@ -15,8 +15,8 @@ export default class Bookmarks extends React.Component{
             cmts:null
         }
     }
-    componentDidUpdate(){ this.getBookmark();
-    }
+   componentDidUpdate(){ this.getBookmark();
+    } 
     getBookmark(){
         console.log(this.props.name)
         var cmts,result={},url
