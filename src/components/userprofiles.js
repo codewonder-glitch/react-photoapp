@@ -39,44 +39,37 @@ import Bookmarks from './Bookmarks'
               
               result.map((dat1,i)=>{
                 
-                dat1.pic.map((dat,i)=>{
-                   
-       //detail={url[i]}
-            console.log("cuming hee")
-           
-                
-           
-{url=<div>
+               var url= dat1.pic.map((dat,i)=>{       
+return(<div>
 <img className="img" src={dat.url}/>
 <div className="Likecomment">
  {dat.likes}<img className="like" src={like}/>
-{/* { 
- url=Object.entries(dat.comments).map(([key, value]) => {
+{url=Object.entries(dat.comments).map(([key, value]) => {
      
-    return (
-        <div>
+    return(
+    <div>
      <h3> comments </h3>
     <h3>{ `${key}: ${value}`} </h3>
  
-    </div>
+    </div>)
     // console.log(`${key}: ${value}`)
-    )})
+    })}
  
- } */}
+ 
  </div> 
  </div>
- }
+)})
  
  
 
+               
 
-
-        }) 
-        linkroutes.push(  <div><Link to={'User'+i}>{dat1.name}</Link>
+        // }) 
+        linkroutes.push(  <div id='user'><Link to={'/User'+i}>{dat1.name}</Link>
         <Switch>
-        <Route exact path={'User'+i}><Renderusers /></Route>
+        <Route exact path={'/User'+i}><Renderusers details={url}/></Route>
         </Switch>
-       </div>) 
+        </div>)  
        
         
     })
@@ -112,12 +105,7 @@ render(){
     
 
         {this.state.linkroutes}
-        {/* {linkroutes=   <div><Link to={'User'+i}>{dat.name}</Link>
- <Switch>
- <Route exact path={'User'+i}><Renderusers /></Route>
- </Switch>
-</div> } */}
- 
+        
        
         </Router>
         </div>

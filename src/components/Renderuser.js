@@ -1,9 +1,9 @@
 import React from 'react';
-const Renderusers=()=>{
+const Renderusers=(props)=>{
     console.log("com ghg gg hhjb jjj")
        return(
-  <div>
-      <h1>visa</h1>
+  <div className="container">
+   {props.details}
   
   </div>
   
