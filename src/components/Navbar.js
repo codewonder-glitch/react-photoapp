@@ -57,7 +57,7 @@ render(){
         <Switch>
         <Route exact path="/"><Home name={this.props.name}/></Route>
         <Route exact path="/users"><Userprofiles name={this.props.name} /></Route>
-        <Route exact path="/Bookmarks"><Bookmarks name={this.props.name}/></Route>
+    <Route exact path="/Bookmarks"   render={(props) => <Bookmarks {...props} name={this.props.name} /> }/>
         </Switch>
 
         </Router>

@@ -15,6 +15,10 @@ export default class Home extends React.Component{
             cmts:null
         }
     }
+    componentDidMount=()=>{
+        this.getBookmark();
+
+    }
     componentDidUpdate(){ this.getBookmark();
     }
     getBookmark(){

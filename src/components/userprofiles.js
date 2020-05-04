@@ -17,37 +17,36 @@ import Bookmarks from './Bookmarks'
             url:''
         }
     }
+    componentDidMount=()=>{
+        this.getBookmark();
 
-    componentDidUpdate(){ this.getBookmark();
+    }
+
+    componentDidUpdate()
+    { this.getBookmark();
     } 
     getBookmark(){
-        console.log(this.props.name)
-        var cmts,result={},url,linkroutes
+     var cmts,result={},url,linkroutes
      if(this.props.name!='')
         {
-
-        data.forEach((obj,i) => {
+          data.forEach((obj,i) => {
             if(obj.name == this.props.name){
               result= obj
               }
               })
               console.log(url)
               result.forEach(dat1=>{
-                  
-        url=dat1.pic.map((dat,i)=>{
+                url=dat1.pic.map((dat,i)=>{
 
         if(dat.bookmark==true){
             console.log("cuming hee")
             return(
               
 <div>
-
-
 <img className="img" src={dat.url}/>
 <div className="Likecomment">
  {dat.likes}<img className="like" src={like}/>
-
- { 
+{ 
  url=Object.entries(dat.comments).map(([key, value]) => {
      
     return (
@@ -90,10 +89,10 @@ import Bookmarks from './Bookmarks'
     
 render(){
   
-        var result
+        
         console.log(this.props.name)
         
-        //  console.log(objdata.name)
+      
         
     return(
 <div>

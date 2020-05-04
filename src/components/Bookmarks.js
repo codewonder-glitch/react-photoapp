@@ -12,15 +12,22 @@ export default class Bookmarks extends React.Component{
         this.state={
 
             url:null,
-            cmts:null
+            cmts:null,
+           name:null
         }
     }
-   componentDidUpdate(){ this.getBookmark();
+   componentDidUpdate=()=>{
+    this.getBookmark();
     } 
+    componentDidMount=()=>{
+        this.getBookmark();
+
+    }
     getBookmark(){
         console.log(this.props.name)
+        console.log("componentdidmount bookmark")
         var cmts,result={},url
-     if(this.props.name!='')
+        if (this.props.name!='')
         {
         data.forEach((obj,i) => {
             if(obj.name == this.props.name){
@@ -43,36 +50,38 @@ export default class Bookmarks extends React.Component{
     return (
         <div>
      
-    <h3>{ `${key}: ${value}`} </h3>
- <h3> </h3>
-    </div>
-    // console.log(`${key}: ${value}`)
-    )})
- 
- }
- </div> 
- </div>)
-
-}
-
-
-        })
-        console.log(url)
-        if(this.state.url==null)
-        {
-            
-        this.setState({url:url})
-        }
+        <h3>{ `${key}: ${value}`} </h3>
+     <h3> </h3>
+        </div>
+        // console.log(`${key}: ${value}`)
+        )})
+     
+     }
+     </div> 
+     </div>)
+    
     }
-        
+    
+    
+            })
+            console.log(url)
+            if(this.state.url==null )
+            {
+                
+            this.setState({url:url})
+            }
+           
+        }
+            
     }
 render(){
 console.log(this.props.name)
+
     return(
 <React.Fragment>
         <div className="container">
+            {this.state.name}
     {this.state.url}
-   
         </div>
 
         </React.Fragment>
