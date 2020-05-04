@@ -4,6 +4,7 @@ import like from '../assets/like.png'
 import data from './Data'
 import Home from './Home'
 import './Home.scss'
+import Renderusers from './Renderuser'
 
 import Bookmarks from './Bookmarks'
 
@@ -13,8 +14,8 @@ import Bookmarks from './Bookmarks'
         super(props)
         this.state={
 
-            linkroutes:'',
-            url:''
+            linkroutes:null,
+            url:null
         }
     }
     componentDidMount=()=>{
@@ -22,31 +23,34 @@ import Bookmarks from './Bookmarks'
 
     }
 
-    componentDidUpdate()
+    componentDidUpdate=()=>
     { this.getBookmark();
     } 
     getBookmark(){
-     var cmts,result={},url,linkroutes
+     var cmts,result=[],url,linkroutes=[]
      if(this.props.name!='')
         {
           data.forEach((obj,i) => {
-            if(obj.name == this.props.name){
-              result= obj
+            if(obj.name != this.props.name){
+                console.log(obj.name)
+              result.push(obj)
               }
               })
-              console.log(url)
-              result.forEach(dat1=>{
-                url=dat1.pic.map((dat,i)=>{
-
-        if(dat.bookmark==true){
-            console.log("cuming hee")
-            return(
               
-<div>
+              result.map((dat1,i)=>{
+                
+                dat1.pic.map((dat,i)=>{
+                   
+       //detail={url[i]}
+            console.log("cuming hee")
+           
+                
+           
+{url=<div>
 <img className="img" src={dat.url}/>
 <div className="Likecomment">
  {dat.likes}<img className="like" src={like}/>
-{ 
+{/* { 
  url=Object.entries(dat.comments).map(([key, value]) => {
      
     return (
@@ -58,29 +62,36 @@ import Bookmarks from './Bookmarks'
     // console.log(`${key}: ${value}`)
     )})
  
- }
+ } */}
  </div> 
- </div>)
+ </div>
+ }
+ 
+ 
 
-}
 
 
         }) 
-        linkroutes=<div><Link to='/${dat1.name}'>{dat1.name}</Link>
-        <Route exact path='/${dat1.name}'><Renderusers detail={this.state.url[0]}/></Route>
-        </div>
+        linkroutes.push(  <div><Link to={'User'+i}>{dat1.name}</Link>
+        <Switch>
+        <Route exact path={'User'+i}><Renderusers /></Route>
+        </Switch>
+       </div>) 
+       
+        
     })
         console.log(url)
-        if(this.state.url==null)
-        {
-            
-        this.setState({url:url})
-        }
+        // if(this.state.url==null) 
+        // this.setState({url:url})
+
+       
+console.log(linkroutes)
+console.log(this.state.linkroutes)
         if(this.state.linkroutes==null)
-        {
             
         this.setState({linkroutes:linkroutes})
-        }
+        
+        console.log(this.state.linkroutes)
     }
  
     }
@@ -101,6 +112,13 @@ render(){
     
 
         {this.state.linkroutes}
+        {/* {linkroutes=   <div><Link to={'User'+i}>{dat.name}</Link>
+ <Switch>
+ <Route exact path={'User'+i}><Renderusers /></Route>
+ </Switch>
+</div> } */}
+ 
+       
         </Router>
         </div>
 
@@ -110,16 +128,8 @@ render(){
    ) } }
 
 
- var Renderusers=(props)=>{
-  
-     return(
-<div>
-    {this.props.detail}
-</div>
-
-
-     )
-
-    }
+ 
 
     export default Userprofiles;
+
+    
