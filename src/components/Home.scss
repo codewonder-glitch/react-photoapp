@@ -69,16 +69,7 @@ left:50px;
   }
 }
 
-#user{
 
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-top:150px;
-left:450px;
-
-}
 
 .Likecomment{
 
@@ -100,3 +91,13 @@ left:450px;
 }
 }
 
+#user{
+
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+top:150px;
+left:450px;
+
+}

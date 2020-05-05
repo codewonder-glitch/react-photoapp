@@ -48,7 +48,7 @@ return(<div>
      
     return(
     <div>
-     <h3> comments </h3>
+     
     <h3>{ `${key}: ${value}`} </h3>
  
     </div>)
@@ -65,7 +65,7 @@ return(<div>
                
 
         // }) 
-        linkroutes.push(  <div id='user'><Link to={'/User'+i}>{dat1.name}</Link>
+        linkroutes.push(  <div ><Link to={'/User'+i}>{dat1.name}</Link>
         <Switch>
         <Route exact path={'/User'+i}><Renderusers details={url}/></Route>
         </Switch>
@@ -99,7 +99,7 @@ render(){
       
         
     return(
-<div>
+<div id='user'>
    
 <Router>
     

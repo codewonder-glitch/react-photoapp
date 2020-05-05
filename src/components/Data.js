@@ -1,11 +1,11 @@
-
+import cat from "../assets/cat.jpg"
 
 const data=[
 {
     name:'visa_win',
     pic:
     [{
-    url:'../assets/cat.jpg',
+    url:{cat},
     likes:2,
     bookmark:true,
     comments:{
@@ -14,7 +14,7 @@ const data=[
       
     }},
     {  
-        url:'../assets/cat.jpg',
+        url:{cat},
     likes:2,
     bookmark:false,
     comments:{
@@ -31,7 +31,7 @@ const data=[
 
     pic:
     [{
-    url:'../assets/cat.jpg',
+    url:{cat},
     likes:2,
     bookmark:false,
     comments:{
