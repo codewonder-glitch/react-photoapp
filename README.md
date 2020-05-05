@@ -1,6 +1,6 @@
 ## Wireframe
 
-![wireframe](src/wireframe/Photoapp.png
+![wireframe](src/wireframe/Photoapp.jpg
 )
 
 
