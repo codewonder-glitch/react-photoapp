@@ -1,6 +1,6 @@
 ## Wireframe
 
-![wireframe](src/wireframe/Shopper'sStop-Wireframe.png
+![wireframe](src/wireframe/Photoapp.png
 )
 
 
