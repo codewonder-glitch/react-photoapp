@@ -1,11 +1,13 @@
 import cat from "../assets/cat.jpg"
+import React,{Component} from 'react';
+import donald from "../assets/donald.jpg"
 
 const data=[
 {
     name:'visa_win',
     pic:
     [{
-    url:{cat},
+    url:cat,
     likes:2,
     bookmark:true,
     comments:{
@@ -14,7 +16,7 @@ const data=[
       
     }},
     {  
-        url:{cat},
+        url:donald,
     likes:2,
     bookmark:false,
     comments:{
@@ -31,7 +33,7 @@ const data=[
 
     pic:
     [{
-    url:{cat},
+    url:donald,
     likes:2,
     bookmark:false,
     comments:{
@@ -40,7 +42,7 @@ const data=[
       
     }},
     {  
-        url:'../assets/cat.jpg',
+        url:cat,
     likes:2,
     bookmark:false,
     comments:{
@@ -57,7 +59,7 @@ const data=[
 
     pic:
     [{
-    url:'../assets/cat.jpg',
+    url:cat,
     likes:2,
     bookmark:false,
     comments:{
@@ -66,7 +68,7 @@ const data=[
       
     }},
     {  
-        url:'../assets/cat.jpg',
+        url:donald,
     likes:2,
     bookmark:false,
     comments:{

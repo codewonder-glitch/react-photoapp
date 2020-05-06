@@ -35,15 +35,16 @@ export default class Bookmarks extends React.Component{
               }
               })
               console.log(url)
-    url=result.pic.map(dat=>{
+        url=result.pic.map(dat=>{
         if(dat.bookmark==true){
-            console.log("cuming hee")
+            
             return(
               
 <div>
 <img className="img" src={dat.url}/>
 <div className="Likecomment">
- {dat.likes}<img className="like" src={like}/>
+ <div>{dat.likes}<img className="like" src={like}/></div>
+ <h3>Comments</h3>
  { 
  url=Object.entries(dat.comments).map(([key, value]) => {
      
@@ -51,7 +52,7 @@ export default class Bookmarks extends React.Component{
         <div>
      
         <h3>{ `${key}: ${value}`} </h3>
-     <h3> </h3>
+       
         </div>
         // console.log(`${key}: ${value}`)
         )})

@@ -74,6 +74,7 @@ left:50px;
 .Likecomment{
 
   display: flex;
+  flex-direction: column;
   position: relative;
   justify-content: space-evenly;
   // left:120px;

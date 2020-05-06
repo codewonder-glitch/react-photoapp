@@ -41,7 +41,8 @@ export default class Home extends React.Component{
 <div>
 <img className="img" src={dat.url}/>
 <div className="Likecomment">
- {dat.likes}<img className="like" src={like}/>
+ <div>{dat.likes}<img className="like" src={like}/></div>
+ <h3>Comments</h3>
  { 
  url=Object.entries(dat.comments).map(([key, value]) => {
      
@@ -49,7 +50,7 @@ export default class Home extends React.Component{
         <div>
      
     <h3>{ `${key}: ${value}`} </h3>
- <h3> </h3>
+    
     </div>
     // console.log(`${key}: ${value}`)
     )})
